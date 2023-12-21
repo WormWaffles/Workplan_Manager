@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- list items -->
+    <div class="list_wrapper">
+        <div class="header">
+            <h3 class="title">Task</h3>
+            <h3 class="est_days">Est. Days</h3>
+            <h3 class="date">Date</h3>
+            <h3 class="days_left">Days Left</h3>
+        </div>
+        <ul id="list">
+            <li>
+                <div class="list_items">
+                    <div class="name">
+                        <p>Finish Apollo testing.</p>
+                    </div>
+                    <div class="est_days">
+                        <p>2</p>
+                    </div>
+                    <div class="date">
+                        <p>Mon 12/4/2023</p>
+                    </div>
+                    <div class="days_left">
+                        <p>5</p>
+                    </div>
+                    <div role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"
+                        style="--value: 85"></div>
+                    <div class="list_item_handle">
+                        <span class="list_item_handle_icon"><img class="handle_icon" src="/static/handle.png"></span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="list_items">
+                    <div class="name">
+                        <p>Ask Acorn for more money because it's not easy developing chips for them.</p>
+                    </div>
+                    <div class="est_days">
+                        <p>4</p>
+                    </div>
+                    <div class="date">
+                        <p>Tue 12/5/2023</p>
+                    </div>
+                    <div class="days_left">
+                        <p>1</p>
+                    </div>
+                    <div role="progressbar" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100"
+                        style="--value: 67"></div>
+                    <div class="list_item_handle">
+                        <span class="list_item_handle_icon"><img class="handle_icon" src="/static/handle.png"></span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="list_items">
+                    <div class="name">
+                        <p>Play Fortnite.</p>
+                    </div>
+                    <div class="est_days">
+                        <p>4</p>
+                    </div>
+                    <div class="date">
+                        <p>Tue 12/12/2023</p>
+                    </div>
+                    <div class="days_left">
+                        <p>3</p>
+                    </div>
+                    <div role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"
+                        style="--value: 100"></div>
+                    <div class="list_item_handle">
+                        <span class="list_item_handle_icon"><img class="handle_icon" src="/static/handle.png"></span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <form action="/">
+        <input type="submit" value="Go to Index">
+    </form>
+</body>
+<style>
+    p {
+        padding: 0;
+        margin: 0;
+        vertical-align: middle;
+        color: #343B41;
+        font: 16px inter, arial, helvetica, sans-serif;
+    }
+
+    .list_wrapper {
+        width: 100%;
+        max-width: 800px;
+        min-width: 400px;
+        margin: 0 auto;
+    }
+
+    .header {
+        display: flex;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        margin-bottom: 0.5em;
+        border: 1px solid #ccc;
+        background-color: #e2e3e4;
+        border-radius: 0.5em;
+    }
+
+    .header h3 {
+        padding: 0;
+        margin: 0;
+        color: #343B41;
+        font: 16px inter, arial, helvetica, sans-serif;
+        font-weight: bold;
+    }
+
+    .header .title {
+        margin-left: 10px;
+        width: 51%;
+    }
+
+    .header .est_days {
+        width: 13%;
+    }
+
+    .header .date {
+        width: 8%;
+    }
+
+    .header .days_left {
+        width: 10%;
+    }
+
+    #list {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    #list li {
+        margin: 0 0 0.5em 0;
+        border-radius: 0.5em;
+        padding: 0.5em;
+        border: 1px solid #ccc;
+        background-color: #e2e3e4;
+    }
+
+    .list_items {
+        /* display one after another */
+        display: flex;
+        max-height: 45px;
+    }
+
+    .name {
+        width: 54%;
+        margin: auto;
+        padding-right: 5px;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        -webkit-line-clamp: 2;
+        text-overflow: ellipsis;
+    }
+
+    .est_days {
+        width: 5%;
+        margin: auto;
+    }
+
+    .est_days p {
+        padding-left: 12px;
+    }
+
+    .date {
+        width: 16%;
+        margin: auto;
+        /* padding-right: 5px; */
+    }
+
+    .days_left {
+        width: 5%;
+        margin: auto;
+    }
+
+    .days_left p {
+        padding-left: 12px;
+    }
+
+    .progressbar {
+        width: 10%;
+    }
+
+    .list_item_handle {
+        width: 10%;
+        padding-left: 5px;
+    }
+
+    .handle_icon {
+        width: 30px;
+        display: block;
+        margin-left: auto;
+        margin-top: 9px;
+        margin-right: 10px;
+        filter: opacity(0.7);
+    }
+
+    .list_item_handle img:hover {
+        cursor: move;
+    }
+
+    /* progress bar */
+    @keyframes progress {
+        0% {
+            --percentage: 0;
+        }
+
+        100% {
+            --percentage: var(--value);
+        }
+    }
+
+    @property --percentage {
+        syntax: '<number>';
+        inherits: true;
+        initial-value: 0;
+    }
+
+    [role="progressbar"] {
+        --percentage: var(--value);
+        --primary: #0067B9;
+        --secondary: #adf;
+        --size: 50px;
+        /* animation: progress 2s 0.5s forwards; */
+        width: var(--size);
+        aspect-ratio: 1;
+        border-radius: 50%;
+        position: relative;
+        overflow: hidden;
+        display: grid;
+        place-items: center;
+    }
+
+    [role="progressbar"]::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: conic-gradient(var(--primary) calc(var(--percentage) * 1%), var(--secondary) 0);
+        mask: radial-gradient(white 55%, transparent 0);
+        mask-mode: alpha;
+        -webkit-mask: radial-gradient(#0000 55%, #000 0);
+        -webkit-mask-mode: alpha;
+    }
+
+    [role="progressbar"]::after {
+        counter-reset: percentage var(--value);
+        content: counter(percentage) '%';
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: calc(var(--size) / 5);
+        color: var(--primary);
+    }
+</style>
+<script src="https://unpkg.com/sortablejs-make/Sortable.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-sortablejs@latest/jquery-sortable.js"></script>
+<script>
+    $('#list').sortable({
+        animation: 350,
+        handle: '.list_item_handle',
+    });
+
+    // on click of progress bar
+    $('#list').on('click', '[role="progressbar"]', function () {
+        // run this animation animation: progress 2s 0.5s forwards;
+        $(this).css('animation', 'progress 2s 0.5s forwards');
+        // remove the css animation after 2.5 seconds
+        setTimeout(() => {
+            $(this).css('animation', '');
+        }, 2500);
+    });
+</script>
+
+</html>
